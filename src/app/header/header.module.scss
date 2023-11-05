@@ -1,0 +1,93 @@
+.gnb {
+  z-index: 10;
+  position: absolute;
+  width: calc(50% + 490px);
+  height: 100px;
+  background: #2b0035e8;
+  box-shadow: 0px 4px 8px 0px rgba(97, 71, 119, 0.2);
+  transform-origin: right;
+  left: 120%;
+  animation: profile-animate 1s ease-in forwards;
+
+  nav {
+    width: 875px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    a {
+      font-weight: 600;
+      font-size: 2rem;
+      color: #fff;
+    }
+  }
+
+  &.transform_header {
+    width: 40px;
+    overflow: hidden;
+    height: 250px;
+    position: fixed;
+    top: calc(50% - 170px);
+    left: calc(100vw - 40px);
+    border-radius: 4px 0 0 4px;
+    box-shadow: -2px 1px 4px 2px rgb(97 71 119 / 76%);
+    animation: none;
+    transition: position ease-in 0.5s, width ease-in 0.5s, height ease-in 0.5s;
+    nav {
+      width: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      font-weight: 300;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .active {
+      background: #5f0079;
+    }
+  }
+}
+
+.active {
+  opacity: 0.3;
+}
+
+//애니메이션
+@keyframes profile-animate {
+  100% {
+    left: calc(50% - 490px);
+  }
+}
+
+//반응형
+
+@media screen and (max-width: 1200px) {
+  .gnb {
+    width: 100%;
+    animation: profile-animate 1s ease-in forwards;
+  }
+
+  //반응형 애니메이션
+  @keyframes profile-animate {
+    100% {
+      left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 976px) {
+  .gnb {
+    nav {
+      width: 100%;
+    }
+  }
+}

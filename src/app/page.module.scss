@@ -1,0 +1,307 @@
+.wrap {
+  padding-top: 100px;
+  section {
+    h2 {
+      color: #fff;
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 24px;
+    }
+  }
+}
+
+//소개 영역
+.profile_box {
+  width: 0;
+  height: 636px;
+  position: relative;
+  background: #fff;
+  transform: rotateZ(11.5deg) translate(-250px, 0);
+  animation: profile-animate 2s ease-in forwards;
+  transition: transform ease-in-out 0.5s;
+  &.scroll_over {
+    transform: rotateZ(0) translate(0, 0);
+    .info_box {
+      opacity: 0;
+      transform: rotateZ(0) translate(-250px, 0);
+    }
+  }
+  .info_box {
+    width: 1200px;
+    min-height: 636px;
+    margin: auto;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transform: rotateZ(-11.5deg);
+    opacity: 0;
+    animation: info-animate 1.5s 1.5s ease-in forwards;
+    transition: transform ease-in-out 0.5s;
+    .left {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+        position: relative;
+        left: -85px;
+        top: -45px;
+      }
+    }
+    .right {
+      position: relative;
+      width: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > .right_text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        row-gap: 24px;
+        column-gap: 24px;
+        margin-bottom: 24px;
+
+        span {
+          width: auto;
+          font-weight: 600;
+          font-size: 2rem;
+          transform: scaleX(-1);
+          color: #fff0;
+          text-shadow: 0px 0px 5px #434343;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          animation: reversal-animate 1s linear forwards;
+
+          &.txt1 {
+            text-align: right;
+            animation-delay: 2.5s;
+          }
+          &.txt2 {
+            animation-delay: 3s;
+          }
+          &.txt3 {
+            text-align: right;
+            animation-delay: 3.5s;
+          }
+          &.txt4 {
+            animation-delay: 4s;
+          }
+        }
+      }
+      .info_main_text {
+        position: relative;
+        padding-top: 24px;
+        align-self: center;
+        text-align: center;
+        span {
+          display: inline-block;
+          position: relative;
+          min-width: 1.2rem;
+          font-weight: 600;
+          font-size: 2.4rem;
+          color: #000f1c;
+          opacity: 0;
+          top: 10px;
+          left: 5px;
+          margin-bottom: 8px;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          animation: text-animate 0.2s ease-in forwards;
+        }
+        strong {
+          font-weight: 900;
+          color: #000;
+          font-size: 2.4rem;
+          display: inline-block;
+          opacity: 0;
+          position: relative;
+          top: 14px;
+          left: 0px;
+
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          animation: text-animate 0.5s ease-in forwards;
+        }
+      }
+    }
+  }
+
+  h2 {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    margin: -1px;
+  }
+}
+
+//퍼블리싱 포트폴리오
+.publishing_box {
+  width: 1200px;
+  padding: 0 60px;
+  margin: 35px auto 0;
+}
+
+//애니메이션
+@keyframes profile-animate {
+  100% {
+    width: calc(100vw + 500px);
+  }
+}
+
+@keyframes info-animate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes text-animate {
+  100% {
+    opacity: 1;
+    top: 0;
+    left: 0;
+  }
+}
+
+@keyframes reversal-animate {
+  0% {
+    transform: scaleX(-1);
+    text-shadow: 0px 0px 5px #434343;
+  }
+  30% {
+    transform: scaleX(-1.1);
+    text-shadow: 0px 0px 2px #434343;
+  }
+  60% {
+    transform: scaleX(0.8);
+  }
+  100% {
+    color: #000f1c;
+    transform: scaleX(1);
+    text-shadow: none;
+  }
+}
+
+//반응형
+
+@media screen and (max-width: 1200px) {
+  .profile_box {
+    transform: rotateZ(11.5deg) translate(-75px, 0);
+    animation: profile-animate 2s ease-in forwards;
+    transition: transform ease-in-out 0.5s;
+    &.scroll_over {
+      .info_box {
+        transform: rotateZ(0) translate(-75px, 0);
+      }
+    }
+
+    .info_box {
+      width: 100%;
+      min-height: 100%;
+      transform: rotateZ(-11.5deg);
+      animation: info-animate 1.5s 1.5s ease-in forwards;
+      transition: transform ease-in-out 0.5s;
+      .left {
+        img {
+          box-shadow: -20px 19px 1px 0px #280033;
+        }
+      }
+    }
+  }
+
+  .publishing_box {
+    width: 100%;
+  }
+
+  //애니메이션
+  @keyframes profile-animate {
+    100% {
+      width: calc(100vw + 150px);
+    }
+  }
+}
+
+@media screen and (max-width: 976px) {
+  .profile_box {
+    transform: none;
+    animation: profile-animate 2s ease-in forwards;
+    transition: none;
+    &.scroll_over {
+      .info_box {
+        transform: none;
+      }
+    }
+
+    .info_box {
+      width: 100%;
+      min-height: 100%;
+      transform: none;
+      animation: info-animate 1.5s 1.5s ease-in forwards;
+      transition: none;
+      .left {
+        img {
+          left: 0;
+        }
+      }
+    }
+  }
+
+  @keyframes profile-animate {
+    100% {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .profile_box {
+    height: 100%;
+    padding: 80px 24px 80px;
+    .info_box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .left {
+        width: 100%;
+        img {
+          width: 150px;
+          height: auto;
+          object-fit: contain;
+        }
+      }
+      .right {
+        width: 100%;
+        > .right_text {
+          row-gap: 16px;
+          column-gap: 16px;
+          margin-bottom: 16px;
+          span {
+            font-weight: 500;
+            font-size: 1.8rem;
+            word-break: keep-all;
+          }
+        }
+        .info_main_text {
+          padding-top: 16px;
+
+          span {
+            min-width: 1rem;
+            font-weight: 500;
+            font-size: 2rem;
+          }
+          strong {
+            font-weight: 600;
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+  }
+}

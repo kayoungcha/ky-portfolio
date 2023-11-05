@@ -1,0 +1,397 @@
+.skill_wrap {
+  max-width: 1200px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0 60px;
+  margin-bottom: 200px;
+
+  ul {
+    max-width: 850px;
+    min-height: 1115px;
+    margin: auto;
+    position: relative;
+    top: 40px;
+  }
+  .icon_box {
+    position: absolute;
+    will-change: transform;
+    transition: transform cubic-bezier(0.07, 0.85, 1, 1) 0.2s;
+    transform-origin: center top;
+    overflow: hidden;
+    border-radius: 45px;
+
+    .wave_wrap {
+      opacity: 0;
+      transition: all ease-in 0.2s;
+    }
+    img {
+      object-position: center;
+      transition: all ease-in 0.2s;
+    }
+
+    &:nth-child(1) {
+      width: 136px;
+      height: 136px;
+      left: 7%;
+      top: 49px;
+
+      .wave_one {
+        top: 7%;
+        left: -26px;
+        background: rgb(255 103 64 / 45%);
+      }
+
+      .wave_tow {
+        top: 5%;
+        left: -4px;
+        background: rgb(255 98 57 / 62%);
+      }
+    }
+    &:nth-child(2) {
+      width: 163px;
+      height: 163px;
+      left: 33%;
+      top: 266px;
+      .wave_one {
+        top: 15%;
+        background: rgb(0 76 232 / 45%);
+      }
+
+      .wave_tow {
+        top: 11%;
+        background: rgb(0 76 232 / 90%);
+      }
+    }
+    &:nth-child(3) {
+      width: 116px;
+      height: 116px;
+      left: 67%;
+      top: 0;
+      .wave_one {
+        top: 24%;
+        background: rgb(228 161 37 / 45%);
+      }
+
+      .wave_tow {
+        top: 20%;
+        background: rgb(228 161 37 / 70%);
+      }
+    }
+    &:nth-child(4) {
+      width: 138px;
+      height: 138px;
+      right: 0;
+      top: 266px;
+      .wave_one {
+        top: 25%;
+        background: rgb(49 120 198 / 45%);
+      }
+
+      .wave_tow {
+        top: 20%;
+        background: rgb(49 120 198 / 90%);
+      }
+    }
+    &:nth-child(5) {
+      width: 127px;
+      height: 127px;
+      left: 0;
+      top: 414px;
+      .wave_one {
+        top: 30%;
+        background: rgb(72 139 255 / 26%);
+      }
+
+      .wave_tow {
+        top: 35%;
+        background: rgb(72 139 255 / 85%);
+      }
+    }
+    &:nth-child(6) {
+      width: 114px;
+      height: 114px;
+      left: 64%;
+      top: 512px;
+      .wave_one {
+        top: 20%;
+        left: -30px;
+        background: rgb(233 141 184 / 45%);
+      }
+
+      .wave_tow {
+        top: 15%;
+        left: -19px;
+        background: rgb(233 141 184 / 80%);
+      }
+    }
+    &:nth-child(7) {
+      width: 122px;
+      height: 122px;
+      left: 24%;
+      top: 587px;
+      .wave_one {
+        top: 30%;
+
+        background: rgb(3 155 229 / 45%);
+      }
+
+      .wave_tow {
+        top: 35%;
+
+        background: rgb(3 155 229 / 80%);
+      }
+    }
+    &:nth-child(8) {
+      width: 102px;
+      height: 102px;
+      left: 7%;
+      top: 836px;
+      .wave_one {
+        top: 55%;
+        left: -57px;
+        background: rgba(0, 0, 0, 0.45);
+      }
+
+      .wave_tow {
+        top: 50%;
+        left: -36px;
+        background: rgb(0 0 0 / 89%);
+      }
+    }
+    &:nth-child(9) {
+      width: 120px;
+      height: 120px;
+      left: 80%;
+      top: 739px;
+      .wave_one {
+        top: 45%;
+        left: -39px;
+        background: rgb(97 218 251 / 45%);
+      }
+
+      .wave_tow {
+        top: 45%;
+        left: -26px;
+        background: rgb(97 218 251 / 80%);
+      }
+    }
+    &:nth-child(10) {
+      width: 143px;
+      height: 143px;
+      left: 45%;
+      top: 880px;
+      .wave_one {
+        top: 35%;
+        left: -39px;
+        background: rgb(221 0 49 / 45%);
+      }
+
+      .wave_tow {
+        top: 29%;
+        left: -12px;
+        background: rgb(195 0 47 / 80%);
+      }
+    }
+
+    &:hover {
+      img {
+        opacity: 0.3;
+      }
+      .wave_wrap {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+///호버 애니메이션
+.wave_one {
+  text-indent: -9999px;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 18%;
+  left: -30px;
+  border-radius: 40%;
+  background: rgb(255 103 64 / 45%);
+  animation: move 3.5s infinite linear;
+}
+
+.wave_tow {
+  text-indent: -9999px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 14%;
+  left: -19px;
+  border-radius: 43%;
+  background: rgb(255 98 57 / 62%);
+  animation: move 3.5s infinite linear;
+}
+
+@keyframes move {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .skill_wrap {
+    ul {
+      top: 80px;
+    }
+    .icon_box {
+      border-radius: 30px;
+      .wave_wrap {
+      }
+
+      &:nth-child(1) {
+        width: 96px;
+        height: 96px;
+        background: #ff4c1e;
+        top: 19px;
+        img {
+          width: 96px;
+          height: 96px;
+        }
+      }
+      &:nth-child(2) {
+        width: 123px;
+        height: 123px;
+        background: #004ce8;
+        top: 200px;
+        img {
+          width: 123px;
+          height: 123px;
+        }
+      }
+      &:nth-child(3) {
+        width: 86px;
+        height: 86px;
+        background: #e4a125;
+
+        img {
+          width: 86px;
+          height: 86px;
+        }
+      }
+      &:nth-child(4) {
+        width: 98px;
+        height: 98px;
+        background: #3178c6;
+        right: -20px;
+        top: 336px;
+        img {
+          width: 98px;
+          height: 98px;
+        }
+      }
+
+      &:nth-child(5) {
+        width: 97px;
+        height: 97px;
+        background: #fff;
+        top: 394px;
+        img {
+          width: 97px;
+          height: 97px;
+        }
+      }
+      &:nth-child(6) {
+        width: 84px;
+        height: 84px;
+        background: #fff;
+        top: 482px;
+        img {
+          width: 84px;
+          height: 84px;
+        }
+      }
+      &:nth-child(7) {
+        width: 92px;
+        height: 92px;
+        background: #039be5;
+        top: 600px;
+        left: 24%;
+        img {
+          width: 92px;
+          height: 92px;
+        }
+      }
+      &:nth-child(8) {
+        width: 82px;
+        height: 82px;
+        background: #fff;
+        top: 757px;
+        left: -10px;
+        img {
+          width: 82px;
+          height: 82px;
+        }
+      }
+      &:nth-child(9) {
+        width: 90px;
+        height: 90px;
+        background: #fff;
+        top: 685px;
+        img {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      &:nth-child(10) {
+        width: 113px;
+        height: 113px;
+        background: #c3002f;
+        left: 32%;
+        top: 870px;
+        img {
+          width: 113px;
+          height: 113px;
+        }
+      }
+
+      &:hover {
+        &:nth-child(1) {
+          background: #ff4b1e31;
+        }
+        &:nth-child(2) {
+          background: #004de81e;
+        }
+        &:nth-child(3) {
+          background: #e4a12521;
+        }
+        &:nth-child(4) {
+          background: #3179c62a;
+        }
+
+        &:nth-child(5) {
+          background: #ffffff9c;
+        }
+        &:nth-child(6) {
+          background: #ffffff9c;
+        }
+        &:nth-child(7) {
+          background: #039ae531;
+        }
+        &:nth-child(8) {
+          background: #ffffff9c;
+        }
+        &:nth-child(9) {
+          background: #ffffff9c;
+        }
+        &:nth-child(10) {
+          background: #c3002e3a;
+        }
+
+        img {
+          opacity: 0.3;
+        }
+        .wave_wrap {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

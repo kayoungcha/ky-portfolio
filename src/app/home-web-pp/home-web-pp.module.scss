@@ -1,0 +1,119 @@
+.web_pp_wrap {
+  max-width: 1200px;
+  height: auto;
+  padding: 0 60px;
+  margin: 0 auto 0;
+  ul {
+    li {
+      margin-bottom: 45px;
+
+      &.active {
+        article {
+          transform: translateX(0);
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 80px;
+      }
+    }
+    .ex_box {
+      width: 100%;
+      height: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      column-gap: 110px;
+      margin-bottom: 24px;
+      .web_img {
+        position: relative;
+        width: 50%;
+        min-height: 295px;
+        object-fit: cover;
+        z-index: 10;
+      }
+
+      article {
+        width: 50%;
+        height: 295px;
+        border-radius: 30px;
+        background: rgba(0, 0, 0, 0.55);
+        backdrop-filter: blur(12.5px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 55px 20px;
+        transform: translateX(calc(-100% - 110px));
+        transition: transform ease-in-out 0.5s;
+        h3,
+        a {
+          font-size: 2.4rem;
+          color: rgb(255 255 255 / 35%);
+          font-weight: 400;
+          &:not(a) {
+            margin-bottom: 24px;
+          }
+        }
+        .icon_img_wrap {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 40px;
+          img {
+            width: 65px;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.fream_wrap {
+  max-width: 1200px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: 976px) {
+  .web_pp_wrap {
+    ul {
+      li {
+        margin-bottom: 24px;
+        &.active {
+          article {
+            transform: translateY(0);
+          }
+        }
+        &:last-child {
+          margin-bottom: 80px;
+        }
+      }
+      .ex_box {
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 24px;
+        margin-bottom: 0;
+        .web_img {
+          width: 100%;
+          min-height: auto;
+          height: auto;
+          object-fit: contain;
+        }
+
+        article {
+          width: 100%;
+          height: 100%;
+          transform: translateY(calc(-100% - 50px));
+        }
+      }
+    }
+  }
+}

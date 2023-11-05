@@ -1,0 +1,162 @@
+.swiper_wrap {
+  position: relative;
+  left: -100%;
+  opacity: 0;
+  transition: all ease-in 0.5s;
+  margin-bottom: 150px;
+  h2 {
+    color: #fff;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+  }
+}
+.slide_area {
+  position: relative;
+}
+.slide_card {
+  position: relative;
+  min-width: 200px;
+  min-height: 433px;
+  perspective: 800px;
+  .card_front,
+  .card_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 433px;
+    border-radius: 8px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    &.active_front {
+      transform: rotateY(180deg);
+    }
+    &.active_back {
+      transform: rotateY(0deg) scaleY(1);
+    }
+  }
+
+  .card_back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgb(255 255 255 / 70%);
+    backdrop-filter: blur(3px);
+    transform: rotateY(180deg) scaleY(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .slide_img:hover,
+  .card_back:hover {
+    cursor: url(/images/click-cursor.png) 50 50, pointer;
+  }
+}
+
+.prev_btn,
+.next_btn {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  z-index: 10;
+  text-indent: -9999px;
+  box-shadow: 1px 1px 6px 0px #450343cf;
+  top: calc(50% - 18px);
+}
+
+.card_back {
+  padding: 25px;
+  row-gap: 20px;
+  .back_title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0px;
+    color: #0f001cc7;
+  }
+  p:not(.tool_area) {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #0f001cc7;
+    margin-bottom: 90px;
+  }
+
+  .tool_title {
+    text-align: left;
+    align-self: flex-start;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-bottom: 1px solid #0f001c;
+    padding-bottom: 4px;
+    padding: 0 4px 4px;
+    color: #0f001c;
+  }
+  .tool_area {
+    display: flex;
+    column-gap: 4px;
+    span {
+      font-size: 1.4rem;
+      color: #0f001cc7;
+    }
+  }
+}
+
+//슬라이드 버튼 스타일
+.prev_btn {
+  left: -20px;
+
+  background: url(/images/btn_prev.png) #fff no-repeat left 43% center;
+  background-size: 10px auto;
+  &[disabled] {
+    opacity: 0.6;
+  }
+}
+
+.next_btn {
+  right: -8px;
+
+  background: url(/images/btn_next.png) #fff no-repeat left 60% center;
+  background-size: 10px auto;
+  &[disabled] {
+    opacity: 0.6;
+  }
+}
+
+.none_box {
+  left: 0;
+  opacity: 1;
+}
+
+@media screen and (max-width: 1200px) {
+  .slide_area {
+    max-width: 850px;
+    width: 100%;
+    margin: auto;
+  }
+  .next_btn {
+    right: -12px;
+  }
+}
+@media screen and (max-width: 976px) {
+  .slide_area {
+    max-width: 650px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slide_area {
+    max-width: 425px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .slide_area {
+    max-width: 248px;
+    width: 100%;
+    padding: 0 20px;
+  }
+}
