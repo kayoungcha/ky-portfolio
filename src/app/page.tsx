@@ -6,7 +6,7 @@ import HoneAppPp from "./home-app-pp/home-app-pp";
 import HomeSkill from "./home-skill/home-skill";
 import HomeSlider from "./home-slider/home-slider";
 import HomeWebPp from "./home-web-pp/home-web-pp";
-import styles from "./page.module.scss";
+import styles from "../app/page.module.scss";
 import Image from "next/image";
 
 export interface scrollPosition {
@@ -111,8 +111,6 @@ export default function Home() {
     }
   }
 
-  //
-
   return (
     <>
       <Header
@@ -135,7 +133,7 @@ export default function Home() {
             <div className={styles.info_box}>
               <div className={styles.left}>
                 <Image
-                  src="/images/profile_img.jpg"
+                  src={`images/profile_img.jpg`}
                   alt="프로필 이미지"
                   width={212}
                   height={272}

@@ -87,7 +87,7 @@ export default function HomeWebPp(scroll: scroll) {
                 <article>
                   <h3>{data.title}</h3>
                   <span className={styles.icon_img_wrap}>
-                    <img src="/images/angular-icon.png" alt="angular icon" />
+                    <img src={"images/angular-icon.png"} alt="angular icon" />
                   </span>
                   {data.url && data.url !== "" && (
                     <a

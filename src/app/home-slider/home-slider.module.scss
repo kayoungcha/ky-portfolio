@@ -51,7 +51,7 @@
 
   .slide_img:hover,
   .card_back:hover {
-    cursor: url(/images/click-cursor.png) 50 50, pointer;
+    cursor: url(../../../public/images/click-cursor.png) 50 50, pointer;
   }
 }
 
@@ -107,7 +107,8 @@
 .prev_btn {
   left: -20px;
 
-  background: url(/images/btn_prev.png) #fff no-repeat left 43% center;
+  background: url(../../../public/images/btn_prev.png) #fff no-repeat left 43%
+    center;
   background-size: 10px auto;
   &[disabled] {
     opacity: 0.6;
@@ -117,7 +118,8 @@
 .next_btn {
   right: -8px;
 
-  background: url(/images/btn_next.png) #fff no-repeat left 60% center;
+  background: url(../../../public/images/btn_next.png) #fff no-repeat left 60%
+    center;
   background-size: 10px auto;
   &[disabled] {
     opacity: 0.6;

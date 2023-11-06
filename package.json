@@ -2,13 +2,16 @@
   "name": "kypp",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://kayoungcha.github.io/ky-portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "next build && touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
+    "firebase": "^10.5.2",
     "lodash": "^4.17.21",
     "next": "14.0.0",
     "react": "^18",
@@ -24,6 +27,7 @@
     "@types/react-slick": "^0.23.11",
     "eslint": "^8",
     "eslint-config-next": "14.0.0",
+    "gh-pages": "^6.0.0",
     "typescript": "^5"
   }
 }

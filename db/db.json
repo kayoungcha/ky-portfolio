@@ -3,49 +3,49 @@
     {
       "id": 1,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     },
     {
       "id": 2,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     },
     {
       "id": 3,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     },
     {
       "id": 4,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     },
     {
       "id": 5,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     },
     {
       "id": 6,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     },
     {
       "id": 7,
       "title": "BLOSSOM",
-      "titleImg": "/images/blossom-app1.png",
+      "titleImg": "images/blossom-app1.png",
       "content": "소개팅 어플",
       "useTool": ["XD", "ionic", "angular"]
     }
@@ -54,7 +54,7 @@
     {
       "id": 1,
       "title": "스타트앱 메인 홈페이지",
-      "titleImg": "/images/startapp-web1.png",
+      "titleImg": "images/startapp-web1.png",
       "content": "스타트앱 회사 메인 홈페이지",
       "useTool": ["XD", "ionic", "angular"],
       "url": "http://localhost:3000/"
@@ -62,7 +62,7 @@
     {
       "id": 2,
       "title": "스타트앱 메인 홈페이지",
-      "titleImg": "/images/startapp-web1.png",
+      "titleImg": "images/startapp-web1.png",
       "content": "스타트앱 회사 메인 홈페이지",
       "useTool": ["XD", "ionic", "angular"],
       "url": ""
@@ -70,7 +70,7 @@
     {
       "id": 3,
       "title": "스타트앱 메인 홈페이지",
-      "titleImg": "/images/startapp-web1.png",
+      "titleImg": "images/startapp-web1.png",
       "content": "스타트앱 회사 메인 홈페이지",
       "useTool": ["XD", "ionic", "angular"],
       "url": "http://localhost:3000/"

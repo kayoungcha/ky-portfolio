@@ -17,7 +17,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/html-icon.png" alt="html icon" />
+          <img src={"images/html-icon.png"} alt="html icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>HTML</div>
             <div className={styles.wave_tow}>90% 사용가능</div>
@@ -32,7 +32,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/css-icon.png" alt="css icon" />
+          <img src={"images/css-icon.png"} alt="css icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>CSS</div>
             <div className={styles.wave_tow}>90% 사용가능</div>
@@ -47,7 +47,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/js-icon.png" alt="javascript icon" />
+          <img src={"images/js-icon.png"} alt="javascript icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>JAVASCRIPT</div>
             <div className={styles.wave_tow}>75% 사용가능</div>
@@ -62,7 +62,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/ts-icon.png" alt="typescript icon" />
+          <img src={"images/ts-icon.png"} alt="typescript icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>TYPESCRIPT</div>
             <div className={styles.wave_tow}>75% 사용가능</div>
@@ -77,7 +77,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/ionic-icon.png" alt="ionic icon" />
+          <img src={"images/ionic-icon.png"} alt="ionic icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>ionic</div>
             <div className={styles.wave_tow}>70% 사용가능</div>
@@ -92,7 +92,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/scss-icon.png" alt="scss icon" />
+          <img src={"images/scss-icon.png"} alt="scss icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>SCSS</div>
             <div className={styles.wave_tow}>80% 사용가능</div>
@@ -107,7 +107,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/firebase-icon.png" alt="fieebase icon" />
+          <img src={"images/firebase-icon.png"} alt="fieebase icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>FIREBASE</div>
             <div className={styles.wave_tow}>60% 사용가능</div>
@@ -122,7 +122,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/nextjs-icon.png" alt="nextjs icon" />
+          <img src={"images/nextjs-icon.png"} alt="nextjs icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>NEXT.JS</div>
             <div className={styles.wave_tow}>40% 사용가능</div>
@@ -137,7 +137,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/react-icon.png" alt="react icon" />
+          <img src={"images/react-icon.png"} alt="react icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>REACT</div>
             <div className={styles.wave_tow}>40% 사용가능</div>
@@ -152,7 +152,7 @@ export default function HomeSkill(scroll: scroll) {
             )})`,
           }}
         >
-          <img src="/images/angular-icon-b.png" alt="angular icon" />
+          <img src={"images/angular-icon-b.png"} alt="angular icon" />
           <div className={styles.wave_wrap}>
             <div className={styles.wave_one}>ANGULAR</div>
             <div className={styles.wave_tow}>65% 사용가능</div>
