@@ -17,7 +17,7 @@ export function useReadDb(
 ) {
   const colName = colref;
   const orderKey = orderkey ? orderkey : "id";
-  const orderWay = order ? order : "desc";
+  const orderWay = order ? order : "asc";
   const [data, setData] = useState<Array<DocumentData>>([]);
 
   async function getDb() {

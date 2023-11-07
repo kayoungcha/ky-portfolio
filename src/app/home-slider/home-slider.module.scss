@@ -76,11 +76,15 @@
     margin-bottom: 0px;
     color: #0f001cc7;
   }
+
   p:not(.tool_area) {
     font-size: 1.8rem;
     font-weight: 500;
     color: #0f001cc7;
     margin-bottom: 90px;
+    line-height: 2.5rem;
+    text-align: center;
+    word-break: keep-all;
   }
 
   .tool_title {

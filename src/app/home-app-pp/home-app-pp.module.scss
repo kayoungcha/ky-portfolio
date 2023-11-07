@@ -31,6 +31,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  padding: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,12 +52,18 @@
     font-weight: 800;
     margin-bottom: 24px;
     color: #0f001cc7;
+    text-align: center;
+    word-break: keep-all;
+    line-height: 2.8rem;
   }
   P {
     font-size: 1.8rem;
     font-weight: 500;
     color: #0f001cc7;
     margin-bottom: 74px;
+    text-align: center;
+    word-break: keep-all;
+    line-height: 2.5rem;
   }
   span {
     display: block;
