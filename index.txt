@@ -1,6 +1,6 @@
 1:HL["/ky-portfolio/_next/static/css/6d12c83432656535.css","style",{"crossOrigin":""}]
 2:HL["/ky-portfolio/_next/static/css/ac58a3d141f3daf3.css","style",{"crossOrigin":""}]
-0:["4RgTpCjo_sDFemqz1QJWB",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/6d12c83432656535.css","precedence":"next","crossOrigin":""}],["$","link","1",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/ac58a3d141f3daf3.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
+0:["n8LKBK4_NCJoCoLFVRPMz",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/6d12c83432656535.css","precedence":"next","crossOrigin":""}],["$","link","1",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/ac58a3d141f3daf3.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
 5:HL["/ky-portfolio/_next/static/css/685f59cfc16daf92.css","style",{"crossOrigin":""}]
 6:I[6954,[],""]
 7:I[7264,[],""]
