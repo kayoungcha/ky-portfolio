@@ -8,6 +8,7 @@ import HomeSlider from "./home-slider/home-slider";
 import HomeWebPp from "./home-web-pp/home-web-pp";
 import styles from "../app/page.module.scss";
 import Image from "next/image";
+import { updateAt } from "../../hooks/useFirebaseDb";
 
 export interface scrollPosition {
   profile: boolean;
@@ -60,6 +61,53 @@ function textAni() {
     }
   });
 }
+
+const testArr = [
+  {
+    id: 1,
+    title: "MISSIONGO",
+    titleImg: "images/blossom-app1.png",
+    content: "미션 커뮤니티 어플",
+    useTool: ["Sketch", "ionic", "angular"],
+  },
+  {
+    id: 2,
+    title: "MAUM",
+    titleImg: "images/blossom-app1.png",
+    content: "커뮤니티 어플",
+    useTool: ["Sketch", "ionic", "angular"],
+  },
+  {
+    id: 3,
+    title: "HEYO",
+    titleImg: "images/blossom-app1.png",
+    content: "지역기반 거래 & 커뮤니티 어플",
+    useTool: ["Sketch", "ionic", "angular"],
+  },
+  {
+    id: 4,
+    title: "ANIDAR",
+    titleImg: "images/blossom-app1.png",
+    content: "산후조리원 시설 예약 및 쇼핑몰 어플",
+    useTool: ["Sketch", "ionic", "angular"],
+  },
+  {
+    id: 5,
+    title: "ANIDAR for buttler",
+    titleImg: "images/blossom-app1.png",
+    content: "산후 조리원 내 직원전용 어플",
+    useTool: ["Sketch", "ionic", "angular"],
+  },
+  {
+    id: 6,
+    title: "스타트앱 솔루션 어플",
+    titleImg: "images/blossom-app1.png",
+    content: "구독 기반 어플 전반",
+    useTool: ["Sketch", "ionic", "angular"],
+  },
+];
+
+console.log({ testArr });
 
 export default function Home() {
   const { scrollY } = useScroll();

@@ -5,6 +5,8 @@ import styles from "./home-web-pp.module.scss";
 import Image from "next/image";
 import useFetch from "../../../hooks/useFetch";
 import { scroll } from "../home-slider/home-slider";
+import { useReadDb } from "../../../hooks/useFirebaseDb";
+import { DocumentData } from "firebase/firestore";
 
 export interface webDb {
   id: number | null;
@@ -18,7 +20,7 @@ export interface webDb {
 export default function HomeWebPp(scroll: scroll) {
   let scrollY: number = scroll.scroll;
 
-  const webData: Array<webDb> = useFetch("webDb");
+  const webData: Array<DocumentData | webDb> = useReadDb("webDb");
 
   let [activeId, setActiveId] = useState<webDb["id"]>(null);
   const handleClick = (id: number | null) => {

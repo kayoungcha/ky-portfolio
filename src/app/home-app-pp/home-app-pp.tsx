@@ -4,13 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./home-app-pp.module.scss";
 import Image from "next/image";
 import { publishingDb } from "../home-slider/home-slider";
-import useFetch from "../../../hooks/useFetch";
 import { scroll } from "../home-slider/home-slider";
+import { DocumentData, collection, getDocs } from "firebase/firestore";
+import { useReadDb } from "../../../hooks/useFirebaseDb";
+import { dbService } from "@/firebase";
 
 export default function HoneAppPp(scroll: scroll) {
   let scrollY: number = scroll.scroll;
   //퍼블리싱 포트폴리오 데이터
-  const pbData: Array<publishingDb> = useFetch("publishingDb");
+  const pbData: Array<DocumentData | publishingDb> = useReadDb("app");
+
   //li 호버 이벤트
   const [thisHovering, setIsHovering] = useState<publishingDb["id"]>(null);
   const handleMouseOver = (id: number | null) => {
@@ -89,7 +92,7 @@ export default function HoneAppPp(scroll: scroll) {
                 <h3>{data.title}</h3>
                 <p>{data.content}</p>
                 <span className={styles.icon_img_wrap}>
-                  {data.useTool.map((tool, index) => {
+                  {data.useTool.map((tool: string, index: number) => {
                     return <span key={index}>{tool}</span>;
                   })}
                 </span>

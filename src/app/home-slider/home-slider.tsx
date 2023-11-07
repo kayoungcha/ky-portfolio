@@ -1,5 +1,4 @@
 "use client";
-
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,9 +7,10 @@ import "swiper/css/pagination";
 import styles from "./home-slider.module.scss";
 
 import Image from "next/image";
-import useFetch from "./../../../hooks/useFetch";
-import { useScroll } from "../../../hooks/useScroll";
+
 import { useRef, useState } from "react";
+import { useReadDb } from "../../../hooks/useFirebaseDb";
+import { DocumentData } from "firebase/firestore";
 
 export interface publishingDb {
   id: number | null;
@@ -27,7 +27,8 @@ export interface scroll {
 export default function HomeSlider(scroll: scroll) {
   let scrollY: number = scroll.scroll;
 
-  const pbData: Array<publishingDb> = useFetch("publishingDb");
+  const pbData: Array<DocumentData | publishingDb> = useReadDb("publishing");
+
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
 
@@ -105,7 +106,7 @@ export default function HomeSlider(scroll: scroll) {
                   <p>{data.content}</p>
                   <h4 className={styles.tool_title}>사용 기술</h4>
                   <p className={styles.tool_area}>
-                    {data.useTool.map((tool, index) => {
+                    {data.useTool.map((tool: string, index: number) => {
                       return <span key={index}>{tool}</span>;
                     })}
                   </p>
