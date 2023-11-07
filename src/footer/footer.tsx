@@ -46,7 +46,7 @@ export default function Footer() {
             <a href="mailto:rkdud9941@gmail.com">: rkdud9941@gmail.com</a>
           </li>
         </ul>
-        <p>여기까지 스크롤해 주셔서 감사합니다!!</p>
+        <p>Thank you for scrolling!!😊</p>
       </div>
     </footer>
   );
