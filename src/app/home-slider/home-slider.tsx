@@ -18,6 +18,8 @@ export interface publishingDb {
   titleImg: string;
   content: string;
   useTool: Array<string>;
+  moreInfo: boolean;
+  param?: string;
 }
 
 export interface scroll {
@@ -57,7 +59,6 @@ export default function HomeSlider(scroll: scroll) {
           }}
           modules={[Navigation]}
           slidesPerView={1}
-          initialSlide={5}
           breakpoints={{
             560: {
               slidesPerView: 2,
@@ -77,9 +78,6 @@ export default function HomeSlider(scroll: scroll) {
           }}
         >
           {pbData.map((data) => {
-            {
-              console.log({ data });
-            }
             return (
               <SwiperSlide
                 key={data.id}

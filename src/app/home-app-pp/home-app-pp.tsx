@@ -5,9 +5,9 @@ import styles from "./home-app-pp.module.scss";
 import Image from "next/image";
 import { publishingDb } from "../home-slider/home-slider";
 import { scroll } from "../home-slider/home-slider";
-import { DocumentData, collection, getDocs } from "firebase/firestore";
+import { DocumentData } from "firebase/firestore";
 import { useReadDb } from "../../../hooks/useFirebaseDb";
-import { dbService } from "@/firebase";
+import Link from "next/link";
 
 export default function HoneAppPp(scroll: scroll) {
   let scrollY: number = scroll.scroll;
@@ -91,11 +91,20 @@ export default function HoneAppPp(scroll: scroll) {
               >
                 <h3>{data.title}</h3>
                 <p>{data.content}</p>
-                <span className={styles.icon_img_wrap}>
+                <div className={styles.icon_img_wrap}>
+                  <h4>사용 기술</h4>
                   {data.useTool.map((tool: string, index: number) => {
                     return <span key={index}>{tool}</span>;
                   })}
-                </span>
+                </div>
+
+                {/* {data.moreInfo && (
+                  // <Link href={`/more?id=${data.param}`}>자세히 보기</Link>
+                  // <Link href={`/more?id=${data.param}`}>자세히 보기</Link>
+                  <Link href={{ pathname: "more", query: { id: data.param } }}>
+                    자세히 보기
+                  </Link>
+                )} */}
               </article>
             </li>
           );

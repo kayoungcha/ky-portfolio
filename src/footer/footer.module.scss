@@ -37,7 +37,6 @@
     flex-direction: column;
     row-gap: 24px;
     li {
-      display: inline-block;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -51,10 +50,20 @@
 }
 
 @media screen and (max-width: 767px) {
+  .footer_wrap {
+    padding: 24px 40px;
+    h2 {
+      margin-left: 20px;
+    }
+  }
   .info_box {
     padding-top: 24px;
+    flex-direction: column;
     ul {
+      width: 100%;
       row-gap: 16px;
+      align-items: center;
+      margin-bottom: 32px;
     }
   }
 }

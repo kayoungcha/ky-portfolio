@@ -80,7 +80,7 @@ export default function HomeWebPp(scroll: scroll) {
               <div className={styles.ex_box}>
                 <Image
                   src={data.titleImg}
-                  alt="소개팅 앱 블라썸"
+                  alt={data.content}
                   width={520}
                   height={295}
                   className={styles.web_img}
@@ -88,10 +88,19 @@ export default function HomeWebPp(scroll: scroll) {
 
                 <article>
                   <h3>{data.title}</h3>
-                  <span className={styles.icon_img_wrap}>
-                    <img src={"images/angular-icon.png"} alt="angular icon" />
-                  </span>
-                  {data.url && data.url !== "" && (
+                  <div className={styles.icon_img_wrap}>
+                    <h4>사용 기술</h4>
+                    <div className={styles.toolbox}>
+                      {data.useTool.map((tool: string, index: number) => {
+                        return (
+                          <span key={index} className={tool}>
+                            {tool}
+                          </span>
+                        );
+                      })}
+                    </div>
+                  </div>
+                  {/* {data.url && data.url !== "" && (
                     <a
                       href="#"
                       onClick={(e) => {
@@ -101,11 +110,11 @@ export default function HomeWebPp(scroll: scroll) {
                     >
                       자세히 보기
                     </a>
-                  )}
+                  )} */}
                 </article>
               </div>
 
-              <div
+              {/* <div
                 className={styles.fream_wrap}
                 style={
                   activeId == data.id
@@ -119,7 +128,7 @@ export default function HomeWebPp(scroll: scroll) {
                 }
               >
                 <iframe src="http://localhost:3000/"></iframe>
-              </div>
+              </div> */}
             </li>
           );
         })}

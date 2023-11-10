@@ -2,6 +2,7 @@
   z-index: 10;
   position: absolute;
   width: calc(50% + 490px);
+  min-width: 320px;
   height: 100px;
   background: #2b0035e8;
   box-shadow: 0px 4px 8px 0px rgba(97, 71, 119, 0.2);
@@ -25,6 +26,7 @@
 
   &.transform_header {
     width: 40px;
+    min-width: 40px;
     overflow: hidden;
     height: 250px;
     position: fixed;
