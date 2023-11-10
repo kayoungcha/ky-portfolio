@@ -7,7 +7,6 @@ import Image from "next/image";
 
 export default function More() {
   const [urlParams, setUrlParams] = useState("");
-
   useEffect(() => {
     const newParams = location.search.split("=");
     setUrlParams(newParams[1]);

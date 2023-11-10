@@ -187,7 +187,6 @@
 }
 
 //반응형
-
 @media screen and (max-width: 1200px) {
   .profile_box {
     transform: rotateZ(11.5deg) translate(-75px, 0);
@@ -251,7 +250,7 @@
       }
     }
   }
-
+  //애니메이션
   @keyframes profile-animate {
     100% {
       width: 100%;
@@ -263,7 +262,7 @@
 @media screen and (max-width: 767px) {
   .profile_box {
     min-height: 470px;
-    height: 100%;
+    height: 470px;
     padding: 80px 24px 80px;
     .info_box {
       display: flex;

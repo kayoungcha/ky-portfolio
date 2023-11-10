@@ -1,11 +1,11 @@
+/*reset*/
+
 html,
 body {
   height: 100%;
   font-size: 10px;
 }
 
-/* You can add global styles to this file, and also import other style files */
-/*reset*/
 html,
 body,
 div,
@@ -207,7 +207,7 @@ button {
   cursor: pointer;
 }
 
-/*reset + normalize*/
+/*--reset + normalize*/
 
 .body-wrap {
   min-width: 320px;
@@ -223,28 +223,7 @@ button {
   overflow-x: hidden;
 }
 
-//
-@media screen and (max-width: 1023px) {
-  html,
-  body {
-    font-size: 9px;
-  }
-}
-@media screen and (max-width: 767px) {
-  html,
-  body {
-    font-size: 7px;
-  }
-  .body-wrap {
-    background: linear-gradient(
-      180deg,
-      #0f001c 60%,
-      rgba(255, 255, 255, 0.97) 86.73%,
-      rgba(15, 0, 28, 0.9) 99%
-    );
-  }
-}
-
+//공통 css
 .XD {
   text-indent: -9999px;
   background: url(../../public/images/xd-icon.svg) no-repeat;
@@ -278,4 +257,26 @@ button {
   text-indent: -9999px;
   background: url(../../public/images/wordpress-icon.png) no-repeat;
   background-size: contain;
+}
+
+//반응형
+@media screen and (max-width: 1023px) {
+  html,
+  body {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 767px) {
+  html,
+  body {
+    font-size: 7px;
+  }
+  .body-wrap {
+    background: linear-gradient(
+      180deg,
+      #0f001c 60%,
+      rgba(255, 255, 255, 0.97) 86.73%,
+      rgba(15, 0, 28, 0.9) 99%
+    );
+  }
 }

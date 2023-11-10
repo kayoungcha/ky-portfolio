@@ -230,6 +230,7 @@
   animation: move 3.5s infinite linear;
 }
 
+//반응형
 @keyframes move {
   100% {
     transform: rotate(360deg);

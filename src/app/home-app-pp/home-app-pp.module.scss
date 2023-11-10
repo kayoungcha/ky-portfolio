@@ -14,16 +14,16 @@
       width: auto;
       height: auto;
       margin-bottom: 65px;
-      border-radius: 8px;
       overflow: hidden;
       opacity: 0;
       transition: opacity cubic-bezier(0.24, 0.05, 0.84, 0.8) 0.3s;
       border-radius: 8px;
       img {
         width: 300px;
-        height: 600px;
-        object-fit: cover;
-        background: #000;
+        height: 650px;
+        object-fit: contain;
+        background: #fff;
+        object-position: top;
       }
       &.active_card {
         opacity: 1;
@@ -42,7 +42,7 @@
   justify-content: center;
   flex-direction: column;
   width: 300px;
-  height: 600px;
+  height: 650px;
   background: rgb(255 255 255 / 70%);
   opacity: 0;
   transform: scaleY(0);
@@ -98,14 +98,14 @@
   }
 }
 
+//반응형
 @media screen and (max-width: 1200px) {
   .app_pp_wrap {
     ul {
       li {
         img {
           width: 260px;
-          height: 520px;
-          object-fit: cover;
+          height: 562px;
         }
       }
     }
@@ -133,7 +133,7 @@
       li {
         img {
           width: 210px;
-          height: 430px;
+          height: 454px;
         }
       }
     }
@@ -148,7 +148,7 @@
       li {
         img {
           width: 250px;
-          height: 500px;
+          height: 541px;
         }
       }
     }
@@ -162,7 +162,6 @@
         img {
           width: 200px;
           height: auto;
-          object-fit: cover;
         }
       }
     }

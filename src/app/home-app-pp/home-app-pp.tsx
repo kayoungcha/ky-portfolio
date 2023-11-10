@@ -14,7 +14,7 @@ export default function HoneAppPp(scroll: scroll) {
   //퍼블리싱 포트폴리오 데이터
   const pbData: Array<DocumentData | publishingDb> = useReadDb("app");
 
-  //li 호버 이벤트
+  //card 호버 이벤트
   const [thisHovering, setIsHovering] = useState<publishingDb["id"]>(null);
   const handleMouseOver = (id: number | null) => {
     setIsHovering(id);
@@ -81,7 +81,7 @@ export default function HoneAppPp(scroll: scroll) {
                 src={data.titleImg}
                 alt={data.title}
                 width={300}
-                height={600}
+                height={650}
               />
               <article
                 className={[

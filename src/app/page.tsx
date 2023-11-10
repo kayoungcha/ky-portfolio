@@ -10,59 +10,56 @@ import styles from "../app/page.module.scss";
 import Image from "next/image";
 import { updateAt } from "../../hooks/useFirebaseDb";
 
-export interface scrollPosition {
-  profile: boolean;
-  portfolio: boolean;
-  skill: boolean;
-  footer: boolean;
-}
-
-//상단 프로필 텍스트 애니메이션
-function textAni() {
-  const text1: string = "노력해서 되는 것들은 늘 즐겁습니다.";
-  const text2: string = "<br />";
-  const text3: string = "프론트엔드 개발자";
-  const text4: string = "myName";
-  const text7: string = "입니다.";
-
-  const textArr: Array<string> = [
-    ...Array.from(text1),
-    text2,
-    ...Array.from(text3),
-    text4,
-    ...Array.from(text7),
-  ];
-
-  const nameIndex = textArr.indexOf("myName");
-
-  return textArr.map((text, i) => {
-    if (text == "<br />") {
-      return <br key={i} />;
-    } else if (text == "myName") {
-      return (
-        <strong key={i} style={{ animationDelay: `${3.5 + Number(i * 0.1)}s` }}>
-          &nbsp;&ldquo;차가영&rdquo;&nbsp;
-        </strong>
-      );
-    } else {
-      return (
-        <span
-          key={i}
-          style={{
-            animationDelay:
-              i < nameIndex
-                ? `${3.5 + Number(i * 0.1)}s`
-                : `${4 + Number(i * 0.1)}s`,
-          }}
-        >
-          {text}
-        </span>
-      );
-    }
-  });
-}
-
 export default function Home() {
+  //상단 프로필 텍스트 애니메이션
+  function textAni() {
+    const text1: string = "노력해서 되는 것들은 늘 즐겁습니다.";
+    const text2: string = "<br />";
+    const text3: string = "프론트엔드 개발자";
+    const text4: string = "myName";
+    const text7: string = "입니다.";
+
+    const textArr: Array<string> = [
+      ...Array.from(text1),
+      text2,
+      ...Array.from(text3),
+      text4,
+      ...Array.from(text7),
+    ];
+
+    const nameIndex = textArr.indexOf("myName");
+
+    return textArr.map((text, i) => {
+      if (text == "<br />") {
+        return <br key={i} />;
+      } else if (text == "myName") {
+        return (
+          <strong
+            key={i}
+            style={{ animationDelay: `${3.5 + Number(i * 0.1)}s` }}
+          >
+            &nbsp;&ldquo;차가영&rdquo;&nbsp;
+          </strong>
+        );
+      } else {
+        return (
+          <span
+            key={i}
+            style={{
+              animationDelay:
+                i < nameIndex
+                  ? `${3.5 + Number(i * 0.1)}s`
+                  : `${4 + Number(i * 0.1)}s`,
+            }}
+          >
+            {text}
+          </span>
+        );
+      }
+    });
+  }
+
+  //세로 스크롤값 받아오기
   const { scrollY } = useScroll();
 
   //header active이벤트
@@ -111,6 +108,8 @@ export default function Home() {
       ele.scrollIntoView({ behavior: "smooth" });
     }
   }
+
+  //--
 
   return (
     <>

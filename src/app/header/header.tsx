@@ -1,5 +1,6 @@
 import styles from "./header.module.scss";
 
+//props interface
 interface propsType {
   scroll: { scroll: number };
   profileView: boolean;
@@ -19,10 +20,13 @@ export default function Header(propsType: {
   let scrollY: number = propsType.scroll;
   let gnbActive = propsType;
 
+  //메뉴 클릭시 스크롤 이동
   function handleClick(e: React.MouseEvent, i: number) {
     e.preventDefault();
     propsType.movePage(i);
   }
+
+  //--
 
   return (
     <>

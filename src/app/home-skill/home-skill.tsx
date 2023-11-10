@@ -2,7 +2,9 @@ import { scroll } from "../home-slider/home-slider";
 import styles from "./home-skill.module.scss";
 
 export default function HomeSkill(scroll: scroll) {
+  //세로 방향 스크롤 위치
   let scrollY: number = scroll.scroll;
+  //--
 
   return (
     <div className={styles.skill_wrap}>

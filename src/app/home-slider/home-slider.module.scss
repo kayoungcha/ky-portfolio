@@ -19,6 +19,7 @@
   min-width: 200px;
   min-height: 433px;
   perspective: 800px;
+
   .card_front,
   .card_back {
     position: absolute;
@@ -29,6 +30,7 @@
     border-radius: 8px;
     transition: transform 0.8s;
     transform-style: preserve-3d;
+    overflow: hidden;
     &.active_front {
       transform: rotateY(180deg);
     }
@@ -107,6 +109,12 @@
   }
 }
 
+//박스 등장 css
+.none_box {
+  left: 0;
+  opacity: 1;
+}
+
 //슬라이드 버튼 스타일
 .prev_btn {
   left: -20px;
@@ -130,11 +138,7 @@
   }
 }
 
-.none_box {
-  left: 0;
-  opacity: 1;
-}
-
+//반응형
 @media screen and (max-width: 1200px) {
   .slide_area {
     max-width: 850px;

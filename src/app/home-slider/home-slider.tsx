@@ -12,6 +12,7 @@ import { useRef, useState } from "react";
 import { useReadDb } from "../../../hooks/useFirebaseDb";
 import { DocumentData } from "firebase/firestore";
 
+//DB 인터페이스
 export interface publishingDb {
   id: number | null;
   title: string;
@@ -27,22 +28,23 @@ export interface scroll {
 }
 
 export default function HomeSlider(scroll: scroll) {
+  //가로 스크롤 값
   let scrollY: number = scroll.scroll;
-
+  //DB
   const pbData: Array<DocumentData | publishingDb> = useReadDb("publishing");
-
+  //슬라이드 prev / next 버튼
   const prevRef = useRef<HTMLButtonElement>(null);
   const nextRef = useRef<HTMLButtonElement>(null);
-
+  // card click 이벤트
   let [activeId, setActiveId] = useState<publishingDb["id"]>(null);
-
   const handleClick = (id: number | null) => {
     activeId == id ? setActiveId(null) : setActiveId(id);
   };
-
+  //세로 스크롤 값이 슬리더 부분보다 크거나 acrive 아이디값이 없으면 카드 회전 이벤트 reset
   if (scrollY > 1300 && activeId !== null) {
     setActiveId(null);
   }
+  //--
 
   return (
     <div

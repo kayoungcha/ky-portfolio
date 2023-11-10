@@ -18,10 +18,12 @@ export interface webDb {
 }
 
 export default function HomeWebPp(scroll: scroll) {
+  //세로 스크롤 값
   let scrollY: number = scroll.scroll;
-
+  //db
   const webData: Array<DocumentData | webDb> = useReadDb("webDb");
 
+  //자세히보기 클릭 이벤트
   let [activeId, setActiveId] = useState<webDb["id"]>(null);
   const handleClick = (id: number | null) => {
     activeId == id ? setActiveId(null) : setActiveId(id);
@@ -65,6 +67,8 @@ export default function HomeWebPp(scroll: scroll) {
       }
     };
   }, [scrollY]);
+
+  //--
 
   return (
     <div className={styles.web_pp_wrap}>
