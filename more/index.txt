@@ -1,6 +1,6 @@
 1:HL["/ky-portfolio/_next/static/css/6d12c83432656535.css","style",{"crossOrigin":""}]
 2:HL["/ky-portfolio/_next/static/css/0e557187f60c4673.css","style",{"crossOrigin":""}]
-0:["BY3L8b7bDx0utOH6bL5EM",[[["",{"children":["more",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/6d12c83432656535.css","precedence":"next","crossOrigin":""}],["$","link","1",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/0e557187f60c4673.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
+0:["l8eTi7JcRaR3Q3sFOANcY",[[["",{"children":["more",{"children":["__PAGE__",{}]}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/6d12c83432656535.css","precedence":"next","crossOrigin":""}],["$","link","1",{"rel":"stylesheet","href":"/ky-portfolio/_next/static/css/0e557187f60c4673.css","precedence":"next","crossOrigin":""}]],"$L4"]]]]
 5:HL["/ky-portfolio/_next/static/css/bdf1946592702ec7.css","style",{"crossOrigin":""}]
 6:I[6954,[],""]
 7:I[7264,[],""]
