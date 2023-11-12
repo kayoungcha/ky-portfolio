@@ -104,21 +104,22 @@ export default function HomeWebPp(scroll: scroll) {
                       })}
                     </div>
                   </div>
-                  {/* {data.url && data.url !== "" && (
+                  {data.url && data.url !== "" && (
                     <a
-                      href="#"
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleClick(data.id);
-                      }}
+                      href={data.url}
+                      target="_blank"
+                      // onClick={(e) => {
+                      //   e.preventDefault();
+                      //   handleClick(data.id);
+                      // }}
                     >
                       자세히 보기
                     </a>
-                  )} */}
+                  )}
                 </article>
               </div>
-
-              {/* <div
+              {/* 
+              <div
                 className={styles.fream_wrap}
                 style={
                   activeId == data.id
@@ -131,7 +132,7 @@ export default function HomeWebPp(scroll: scroll) {
                     : {}
                 }
               >
-                <iframe src="http://localhost:3000/"></iframe>
+                <iframe src={data.url}></iframe>
               </div> */}
             </li>
           );
