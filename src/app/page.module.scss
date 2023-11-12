@@ -11,16 +11,25 @@
 }
 
 //소개 영역
+.profile_wrap {
+  background-color: rgb(15 0 28 / 0%);
+  transition: background-color ease-in-out 0.5s;
+}
+
 .profile_box {
   width: 0;
-  height: 636px;
-  position: relative;
-  background: #fff;
+  // height: 636px;
+  height: 336px;
+  // background: #fff;
+  background: #20062f;
   transform: rotateZ(11.5deg) translate(-250px, 0);
   animation: profile-animate 1.5s ease-in forwards;
-  transition: transform ease-in-out 0.5s;
+  transform-origin: center;
+  transition: transform ease-in-out 0.5s, width ease-in 0.5s,
+    height ease-in 0.5s, background ease-out 0.5s, height ease-in-out 0.5s;
   &.scroll_over {
     transform: rotateZ(0) translate(0, 0);
+    background: rgb(15 0 28);
     .info_box {
       opacity: 0;
       transform: rotateZ(0) translate(-250px, 0);
@@ -101,7 +110,8 @@
           min-width: 1.2rem;
           font-weight: 600;
           font-size: 2.4rem;
-          color: #000f1c;
+          // color: #000f1c;
+          color: #fff;
           opacity: 0;
           top: 10px;
           left: 5px;
@@ -112,14 +122,14 @@
         }
         strong {
           font-weight: 900;
-          color: #000;
+          // color: #000;
+          color: #fff;
           font-size: 2.4rem;
           display: inline-block;
           opacity: 0;
           position: relative;
           top: 14px;
           left: 0px;
-
           -webkit-font-smoothing: antialiased;
           -moz-osx-font-smoothing: grayscale;
           animation: text-animate 0.5s ease-in forwards;
@@ -136,17 +146,34 @@
   }
 }
 
+//포트폴리오 wrap
+.pp_wrap {
+  // position: relative;
+  // top: -300px;
+  // padding-top: 300px;
+  background-color: rgb(15 0 28 / 0%);
+  transition: background-color ease-in-out 0.5s;
+}
+
 //퍼블리싱 포트폴리오
 .publishing_box {
   width: 1200px;
-  padding: 0 60px;
-  margin: 35px auto 0;
+  padding: 35px 60px 0;
+  margin: 0 auto;
+}
+
+//사용 가능 기술 영역
+
+.skill_wrap {
+  padding-top: 80px;
+  background: rgba(15, 0, 28, 0.09);
 }
 
 //애니메이션
 @keyframes profile-animate {
   100% {
     width: calc(100vw + 500px);
+    height: 636px;
   }
 }
 
@@ -180,7 +207,8 @@
     transform: scaleX(0.8);
   }
   100% {
-    color: #000f1c;
+    // color: #000f1c;
+    color: #fff;
     transform: scaleX(1);
     text-shadow: none;
   }
@@ -220,6 +248,7 @@
   @keyframes profile-animate {
     100% {
       width: calc(100vw + 150px);
+      height: 636px;
     }
   }
 }
@@ -228,6 +257,7 @@
   .profile_box {
     position: relative;
     left: -120px;
+    height: 636px;
     transform: none;
     transition: none;
     animation: profile-animate 2s ease-in forwards;
@@ -240,6 +270,7 @@
     .info_box {
       width: 100%;
       min-height: 100%;
+
       transform: none;
       animation: info-animate 1.5s 1.5s ease-in forwards;
       transition: none;

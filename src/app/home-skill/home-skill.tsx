@@ -8,7 +8,7 @@ export default function HomeSkill(scroll: scroll) {
 
   return (
     <div className={styles.skill_wrap}>
-      <h2>사용 가능 기술</h2>
+      <h2 className={styles.b_title}>사용 가능 기술</h2>
       <ul className={styles.skill_list}>
         <li
           className={styles.icon_box}

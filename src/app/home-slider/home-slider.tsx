@@ -8,9 +8,10 @@ import styles from "./home-slider.module.scss";
 
 import Image from "next/image";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useReadDb } from "../../../hooks/useFirebaseDb";
 import { DocumentData } from "firebase/firestore";
+import { isIOS, isSafari } from "react-device-detect";
 
 //DB 인터페이스
 export interface publishingDb {
@@ -28,6 +29,14 @@ export interface scroll {
 }
 
 export default function HomeSlider(scroll: scroll) {
+  //ios 디바이스 확인
+  const [whatIs, setWhatIs] = useState(false);
+  useEffect(() => {
+    if (isIOS || isSafari) {
+      setWhatIs(true);
+    }
+  }, [whatIs]);
+
   //가로 스크롤 값
   let scrollY: number = scroll.scroll;
   //DB
@@ -38,12 +47,15 @@ export default function HomeSlider(scroll: scroll) {
   // card click 이벤트
   let [activeId, setActiveId] = useState<publishingDb["id"]>(null);
   const handleClick = (id: number | null) => {
-    activeId == id ? setActiveId(null) : setActiveId(id);
+    if (!whatIs) {
+      activeId == id ? setActiveId(null) : setActiveId(id);
+    }
   };
   //세로 스크롤 값이 슬리더 부분보다 크거나 acrive 아이디값이 없으면 카드 회전 이벤트 reset
   if (scrollY > 1300 && activeId !== null) {
     setActiveId(null);
   }
+
   //--
 
   return (
@@ -83,7 +95,10 @@ export default function HomeSlider(scroll: scroll) {
             return (
               <SwiperSlide
                 key={data.id}
-                className={styles.slide_card}
+                className={[
+                  styles.slide_card,
+                  !whatIs ? styles.on_card_filp : styles.off_card_filp,
+                ].join(" ")}
                 onClick={() => handleClick(data.id)}
               >
                 <div

@@ -1,7 +1,7 @@
 .web_pp_wrap {
   max-width: 1200px;
   height: auto;
-  padding: 0 60px;
+  padding: 0 60px 70px;
   margin: 0 auto 0;
   ul {
     li {
@@ -12,10 +12,6 @@
           opacity: 1;
           transform: translateX(0);
         }
-      }
-
-      &:last-child {
-        margin-bottom: 150px;
       }
     }
     .ex_box {
@@ -39,7 +35,7 @@
         width: 50%;
         height: 295px;
         border-radius: 30px;
-        background: rgba(0, 0, 0, 0.55);
+        background: rgb(143 143 143 / 61%);
         backdrop-filter: blur(12.5px);
         display: flex;
         align-items: center;

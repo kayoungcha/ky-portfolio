@@ -22,8 +22,11 @@
         width: 300px;
         height: 650px;
         object-fit: contain;
-        background: #fff;
+        background: #000;
         object-position: top;
+        &:first-child {
+          background: #fff;
+        }
       }
       &.active_card {
         opacity: 1;

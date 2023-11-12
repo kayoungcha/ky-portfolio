@@ -28,15 +28,7 @@
     width: 200px;
     height: 433px;
     border-radius: 8px;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
     overflow: hidden;
-    &.active_front {
-      transform: rotateY(180deg);
-    }
-    &.active_back {
-      transform: rotateY(0deg) scaleY(1);
-    }
   }
 
   .card_back {
@@ -46,14 +38,58 @@
     flex-direction: column;
     background: rgb(255 255 255 / 70%);
     backdrop-filter: blur(3px);
+  }
+}
+
+.on_card_filp {
+  .slide_img:hover,
+  .card_back:hover {
+    cursor: url(../../../public/images/click-cursor.png) 50 50, pointer;
+  }
+  .card_front,
+  .card_back {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: transform 0.8s;
+    &.active_front {
+      transform: rotateY(180deg);
+    }
+    &.active_back {
+      transform: rotateY(0deg) scaleY(1);
+    }
+  }
+
+  .card_back {
     transform: rotateY(180deg) scaleY(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
+}
 
-  .slide_img:hover,
-  .card_back:hover {
-    cursor: url(../../../public/images/click-cursor.png) 50 50, pointer;
+.off_card_filp {
+  .card_front,
+  .card_back {
+    transition: all ease-in-out 0.8s;
+  }
+
+  .card_front {
+    opacity: 1;
+  }
+
+  .card_back {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+
+  &.slide_card:hover {
+    .card_front {
+      opacity: 0.5;
+    }
+
+    .card_back {
+      opacity: 1;
+      transform: scaleY(1);
+    }
   }
 }
 

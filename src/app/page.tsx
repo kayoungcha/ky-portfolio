@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useScroll } from "../../hooks/useScroll";
 import Header from "./header/header";
 import HoneAppPp from "./home-app-pp/home-app-pp";
@@ -8,9 +8,20 @@ import HomeSlider from "./home-slider/home-slider";
 import HomeWebPp from "./home-web-pp/home-web-pp";
 import styles from "../app/page.module.scss";
 import Image from "next/image";
-import { updateAt } from "../../hooks/useFirebaseDb";
 
 export default function Home() {
+  //새로고침시 스크롤 top 으로 이동
+  const resetWindowScrollPosition = useCallback(
+    () => window.scrollTo(0, 0),
+    []
+  );
+
+  useEffect(() => {
+    window.onbeforeunload = function () {
+      resetWindowScrollPosition();
+    };
+  }, [resetWindowScrollPosition]);
+
   //상단 프로필 텍스트 애니메이션
   function textAni() {
     const text1: string = "노력해서 되는 것들은 늘 즐겁습니다.";
@@ -121,8 +132,19 @@ export default function Home() {
         footerView={FooterPosition}
         movePage={movePage}
       />
+
       <main className={styles.wrap}>
-        <div ref={(el) => (refList.current[0] = el)}>
+        {/* 소개  */}
+        <div
+          className={styles.profile_wrap}
+          style={{
+            backgroundColor: `rgb(15 0 28 / ${Math.min(
+              -250 - -scrollY,
+              100
+            )}%)`,
+          }}
+          ref={(el) => (refList.current[0] = el)}
+        >
           <section
             className={[
               styles.profile_box,
@@ -130,6 +152,7 @@ export default function Home() {
             ].join(" ")}
           >
             <h2>소개</h2>
+
             <div className={styles.info_box}>
               <div className={styles.left}>
                 <Image
@@ -139,6 +162,7 @@ export default function Home() {
                   height={272}
                 />
               </div>
+
               <div className={styles.right}>
                 <p className={styles.right_text}>
                   <span className={styles.txt1}>시작은 퍼블리셔</span>
@@ -155,7 +179,26 @@ export default function Home() {
           </section>
         </div>
 
-        <div ref={(el) => (refList.current[1] = el)}>
+        {/* 포트폴리오 */}
+        <div
+          className={styles.pp_wrap}
+          style={
+            !skillPosition
+              ? {
+                  backgroundColor: `rgb(15 0 28 / ${Math.min(
+                    -250 - -scrollY,
+                    100
+                  )}%)`,
+                }
+              : {
+                  backgroundColor: `rgb(15 0 28 / ${Math.max(
+                    (refList.current[2]?.offsetTop || 0) - 600 - scrollY,
+                    9
+                  )}%)`,
+                }
+          }
+          ref={(el) => (refList.current[1] = el)}
+        >
           <section className={styles.publishing_box}>
             <HomeSlider scroll={scrollY} />
           </section>
@@ -167,10 +210,14 @@ export default function Home() {
             <HomeWebPp scroll={scrollY} />
           </section>
         </div>
-        <section ref={(el) => (refList.current[2] = el)}>
+        <section
+          className={styles.skill_wrap}
+          ref={(el) => (refList.current[2] = el)}
+        >
           <HomeSkill scroll={scrollY} />
         </section>
       </main>
+      {/* 스킬 */}
       <div ref={(el) => (refList.current[3] = el)}></div>
     </>
   );

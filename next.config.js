@@ -7,7 +7,7 @@ const nextConfig = {
     loaderFile: "./my-loader.ts",
   },
   trailingSlash: true,
-  basePath: "/ky-portfolio",
+  // basePath: "/ky-portfolio",
 };
 
 module.exports = nextConfig;

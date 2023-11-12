@@ -1,3 +1,4 @@
+@import "../app/variables.scss";
 .footer_wrap {
   width: 100%;
   height: auto;
@@ -5,7 +6,7 @@
   border-bottom: 6px solid #000;
   min-height: 300px;
   padding: 24px 60px;
-
+  background: $main-color;
   h2 {
     color: #fff;
     font-size: 2.4rem;

@@ -3,9 +3,11 @@
   width: 100%;
   height: auto;
   margin: 0 auto;
-  padding: 0 60px;
-  margin-bottom: 300px;
+  padding: 0 60px 300px;
 
+  h2.b_title {
+    color: #000;
+  }
   ul {
     max-width: 850px;
     min-height: 1115px;
