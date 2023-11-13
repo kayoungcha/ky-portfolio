@@ -98,13 +98,13 @@ export default function HoneAppPp(scroll: scroll) {
                   })}
                 </div>
 
-                {/* {data.moreInfo && (
+                {data.moreInfo && (
                   // <Link href={`/more?id=${data.param}`}>자세히 보기</Link>
                   // <Link href={`/more?id=${data.param}`}>자세히 보기</Link>
                   <Link href={{ pathname: "more", query: { id: data.param } }}>
                     자세히 보기
                   </Link>
-                )} */}
+                )}
               </article>
             </li>
           );
