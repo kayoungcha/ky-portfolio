@@ -30,6 +30,7 @@
     width: 100%;
     margin: auto;
     padding: 80px;
+
     .top_box {
       display: flex;
       align-items: flex-end;
@@ -57,12 +58,25 @@
           margin-bottom: 16px;
         }
 
-        .info {
-          font-size: 1.8rem;
-          font-weight: 400;
-          color: $color-primary;
-          word-break: keep-all;
-          margin-bottom: 40px;
+        .info_box {
+          .info {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: $color-primary;
+            word-break: keep-all;
+            margin-bottom: 8px;
+          }
+          p {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: $color-primary;
+            line-height: 1.6rem;
+
+            &:last-child {
+              font-size: 1.2rem;
+              margin-bottom: 40px;
+            }
+          }
         }
 
         article {
@@ -100,6 +114,9 @@
               height: 32px;
               background-size: contain;
               margin-right: 14px;
+              &:last-child {
+                margin-right: 0;
+              }
             }
           }
 
@@ -114,7 +131,7 @@
           align-items: flex-start;
           flex-wrap: wrap;
           article {
-            width: 50%;
+            width: 33.3%;
           }
         }
       }
@@ -131,6 +148,9 @@
     row-gap: 24px;
     background: #f9f9f9;
     margin-bottom: 80px;
+    h2 {
+      font-size: 2rem;
+    }
     iframe {
       width: 375px;
       height: 812px;
@@ -195,25 +215,32 @@
 
 @media screen and (max-width: 1200px) {
   .page_wrap .info_wrap {
-    padding: 40px 20px;
+    // padding: 40px 20px;
     .top_box .right_area {
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .info_box {
+        .info {
+          line-height: 2rem;
+        }
+        p {
+          text-align: center;
+        }
+      }
+
       h2,
       .info {
         text-align: center;
       }
 
       .felx_box {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
+        column-gap: 48px;
         article {
           width: auto;
         }
-      }
-      .tool {
-        width: 140px;
-        margin: auto;
       }
     }
   }
@@ -232,6 +259,27 @@
       .notice {
         left: calc(50% - 160px);
         width: 320px;
+      }
+    }
+    .info_wrap {
+      padding: 40px 0;
+      .top_box {
+        padding: 0 20px;
+        .right_area {
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+
+          .felx_box {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 24px;
+            article {
+              width: auto;
+            }
+          }
+        }
       }
     }
   }

@@ -24,7 +24,7 @@ export default function Home() {
 
   //상단 프로필 텍스트 애니메이션
   function textAni() {
-    const text1: string = "노력해서 되는 것들은 늘 즐겁습니다.";
+    const text1: string = "새로운 도전은 매번 저를 설레게합니다.";
     const text2: string = "<br />";
     const text3: string = "프론트엔드 개발자";
     const text4: string = "myName";
@@ -154,21 +154,12 @@ export default function Home() {
             <h2>소개</h2>
 
             <div className={styles.info_box}>
-              <div className={styles.left}>
-                <Image
-                  src="images/profile_img.jpg"
-                  alt="프로필 이미지"
-                  width={212}
-                  height={272}
-                />
-              </div>
-
-              <div className={styles.right}>
-                <p className={styles.right_text}>
+              <div className={styles.text_area}>
+                <p className={styles.top_text}>
                   <span className={styles.txt1}>시작은 퍼블리셔</span>
                   <span className={styles.txt2}>목표는 풀스텍 개발자</span>
                 </p>
-                <p className={styles.right_text}>
+                <p className={styles.top_text}>
                   <span className={styles.txt3}>노력형 개발자</span>
                   <span className={styles.txt4}>앱 / 웹 에이전시 경력 3년</span>
                 </p>

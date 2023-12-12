@@ -7,6 +7,7 @@ import {
   getDocs,
   orderBy,
   query,
+  where,
 } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 
@@ -30,8 +31,6 @@ export function useReadDb(
       return { id, ...docData };
     });
 
-    console.log({ dataArr });
-
     setData(dataArr);
   }
 
@@ -42,13 +41,27 @@ export function useReadDb(
   return data;
 }
 
+export async function readDoc(colref: string, key: string, value: string) {
+  const colName = colref;
+
+  const citiesRef = collection(dbService, colName);
+  const q = query(citiesRef, where(key, "==", value));
+
+  const querySnapshot = await getDocs(q);
+
+  const dataArr = await querySnapshot.docs.map((doc: DocumentData) => {
+    const docData: DocumentData = doc.data();
+    const id = doc.id;
+    return { id, ...docData };
+  });
+
+  return dataArr;
+}
+
 export async function updateAt(path: string, obj: Object) {
   try {
     const docRef = await addDoc(collection(dbService, path), obj);
-    console.log({ docRef });
-    console.log("Document written with ID: ", docRef.id);
   } catch (e) {
-    console.log("????");
     console.error("Error adding document: ", e);
   }
 }

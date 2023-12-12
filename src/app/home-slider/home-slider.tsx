@@ -22,6 +22,13 @@ export interface publishingDb {
   useTool: Array<string>;
   moreInfo: boolean;
   param?: string;
+  url?: string;
+  detailContent?: string;
+  detailImg?: Array<string>;
+  mainColor?: string;
+  devScope?: string;
+  devPeriod?: string;
+  devInfo?: string;
 }
 
 export interface scroll {
