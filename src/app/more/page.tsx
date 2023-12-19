@@ -27,8 +27,6 @@ export default function More() {
 
     if (newParams && appData && appData.detailImg) {
       swiper.update();
-
-      console.log({ swiper });
     }
   }, [urlParams]);
 
@@ -88,7 +86,7 @@ export default function More() {
                     color: appData.mainColor || "#000",
                   }}
                 >
-                  BLOSSOM
+                  {appData.title}
                 </h2>
                 <div className={styles.info_box}>
                   <p className={styles.info}>{appData.detailContent}</p>
@@ -132,28 +130,35 @@ export default function More() {
               <h2>자세히 보기</h2>
               <iframe src={appData.url}></iframe>
 
-              <section
-                className={styles.notice}
+              <div
+                className={styles.notice_wrap}
                 style={hideNotice ? { display: "none" } : {}}
               >
-                <p>
-                  직접 작동해 볼 수 있는 카피 페이지입니다. <br />
-                  어플 안에 내용은 모두 테스트 데이터로 실제 데이터와 다릅니다.{" "}
-                  <br />
-                  웹에서 작동하게 만든 사이트로 실제 어플 구동과는 차이가 있을
-                  수 있습니다.
-                  <br />
-                </p>
+                <section className={styles.notice}>
+                  <p>
+                    직접 작동해 볼 수 있는 카피 페이지입니다. <br />
+                    어플 안에 내용은 모두 테스트 데이터로 실제 데이터와
+                    다릅니다. <br />
+                    웹에서 작동하게 만든 사이트로 실제 어플 구동과는 차이가 있을
+                    수 있습니다.
+                    <br />
+                    <br />
+                    <br />
+                    모든 이미지 업로드 서비스는 어플용 플러그인으로
+                    <br />
+                    카피 페이지에서는 실행 되지않습니다.
+                  </p>
 
-                {/* <p>
+                  {/* <p>
                 직접 확인이 가능한 카피 페이지입니다.
                 <br />
                 퍼블리싱 예시 페이지로 기능은 붙어있지 않습니다.
                 <br />
                 안에있는 모든 정보는 실제 앱과 다릅니다.
               </p> */}
-                <button onClick={handleClick}>닫고 시작하기</button>
-              </section>
+                  <button onClick={handleClick}>닫고 시작하기</button>
+                </section>
+              </div>
             </section>
           </div>
         </main>

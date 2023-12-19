@@ -27,6 +27,17 @@
   transform-origin: center;
   transition: transform ease-in-out 0.5s, width ease-in 0.5s,
     height ease-in 0.5s, background ease-out 0.5s, height ease-in-out 0.5s;
+  &::after {
+    content: " ";
+    display: block;
+    background: url(../../public/images/my-icon.png) repeat center center/70px
+      70px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0.02;
+    top: 10px;
+  }
   &.scroll_over {
     transform: rotateZ(0) translate(0, 0);
     background: rgb(15 0 28);
@@ -47,18 +58,6 @@
     opacity: 0;
     animation: info-animate 1.5s 1.5s ease-in forwards;
     transition: transform ease-in-out 0.5s;
-    &::after {
-      content: " ";
-      display: block;
-      background: url(/_next/static/media/my-icon.255e9744.png) repeat center
-        center/70px 70px;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      opacity: 0.02;
-      top: 10px;
-      transform: rotateZ(11.5deg);
-    }
 
     .text_area {
       position: relative;

@@ -67,6 +67,7 @@ export default function HoneAppPp(scroll: scroll) {
   return (
     <div className={styles.app_pp_wrap}>
       <h2>앱 개발 포트폴리오</h2>
+
       <ul>
         {pbData.map((data, i) => {
           return (
@@ -77,11 +78,18 @@ export default function HoneAppPp(scroll: scroll) {
               ref={(el) => (refList.current[i] = el)}
               className={activeCard["set" + i] ? styles.active_card : ""}
             >
+              {data.url && (
+                <div className={styles.page_guide}>
+                  <span className={styles.txt_star}>★</span>
+                </div>
+              )}
+
               <Image
                 src={data.titleImg}
                 alt={data.title}
                 width={300}
                 height={650}
+                style={data.title == "MISSIONGO" ? { background: "#fff" } : {}}
               />
               <article
                 className={[
@@ -99,8 +107,6 @@ export default function HoneAppPp(scroll: scroll) {
                 </div>
 
                 {data.moreInfo && (
-                  // <Link href={`/more?id=${data.param}`}>자세히 보기</Link>
-                  // <Link href={`/more?id=${data.param}`}>자세히 보기</Link>
                   <Link href={{ pathname: "more", query: { id: data.param } }}>
                     자세히 보기
                   </Link>

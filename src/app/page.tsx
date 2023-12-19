@@ -24,7 +24,7 @@ export default function Home() {
 
   //상단 프로필 텍스트 애니메이션
   function textAni() {
-    const text1: string = "새로운 도전은 매번 저를 설레게합니다.";
+    const text1: string = "새로운 도전은 매번 설레입니다.";
     const text2: string = "<br />";
     const text3: string = "프론트엔드 개발자";
     const text4: string = "myName";

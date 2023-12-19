@@ -29,6 +29,7 @@ export interface publishingDb {
   devScope?: string;
   devPeriod?: string;
   devInfo?: string;
+  docId: string;
 }
 
 export interface scroll {
