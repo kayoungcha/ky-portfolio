@@ -169,7 +169,6 @@ export default function Home() {
             </div>
           </section>
         </div>
-
         {/* 포트폴리오 */}
         <div
           className={styles.pp_wrap}
@@ -206,10 +205,10 @@ export default function Home() {
           ref={(el) => (refList.current[2] = el)}
         >
           <HomeSkill scroll={scrollY} />
-        </section>
+        </section>{" "}
+        {/* 스킬 */}
+        <div ref={(el) => (refList.current[3] = el)}></div>
       </main>
-      {/* 스킬 */}
-      <div ref={(el) => (refList.current[3] = el)}></div>
     </>
   );
 }

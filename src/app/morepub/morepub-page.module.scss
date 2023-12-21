@@ -7,12 +7,17 @@
   background: #fff;
   .temporary_header {
     width: 100%;
-    min-height: 64px;
+    min-height: 56px;
     height: auto;
     padding: 0 40px;
     display: flex;
     align-items: center;
-    background: #000f1c;
+    background: rgb(11 0 28 / 83%);
+    position: fixed;
+    top: 0;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    z-index: 10;
     a {
       width: 32px;
       font-size: 1.4rem;
@@ -30,7 +35,7 @@
     max-width: 1200px;
     width: 100%;
     margin: auto;
-    padding: 80px;
+    padding: 136px 80px 80px;
 
     .top_box {
       display: flex;
@@ -71,6 +76,7 @@
             color: $color-primary;
             word-break: keep-all;
             margin-bottom: 8px;
+            line-height: 2.2rem;
           }
           p {
             font-size: 1.4rem;
@@ -201,7 +207,7 @@
 @media screen and (max-width: 560px) {
   .page_wrap {
     .info_wrap {
-      padding: 40px 0;
+      padding: 96px 0;
       .top_box {
         padding: 0 20px;
         .right_area {
