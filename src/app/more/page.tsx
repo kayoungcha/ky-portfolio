@@ -43,7 +43,7 @@ export default function More() {
       <div className={styles.temporary_header}>
         <Link href="/">
           <Image
-            src="/images/home-icon.png"
+            src="../images/home-icon.png"
             alt="홈 icon"
             width={32}
             height={32}
@@ -71,8 +71,10 @@ export default function More() {
                         >
                           <Image
                             src={img}
+                            blurDataURL={img}
                             width={200}
                             height={433}
+                            placeholder="blur"
                             alt={appData.title + "예시화면" + index + 1}
                           ></Image>
                         </SwiperSlide>
@@ -109,6 +111,8 @@ export default function More() {
                           );
                         })}
                     </ul>
+                    <h3>플랫폼</h3>
+                    <p>{appData.platform}</p>
                   </article>
                   <article className={styles.tool}>
                     <h3>개발 도구</h3>

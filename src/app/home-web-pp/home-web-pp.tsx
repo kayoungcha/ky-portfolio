@@ -84,14 +84,24 @@ export default function HomeWebPp(scroll: scroll) {
               <div className={styles.ex_box}>
                 <Image
                   src={data.titleImg}
+                  blurDataURL={data.titleImg}
                   alt={data.content}
                   width={520}
                   height={295}
+                  placeholder="blur"
                   className={styles.web_img}
                 />
 
                 <article>
-                  <h3>{data.title}</h3>
+                  <h3>
+                    {" "}
+                    {data.url && (
+                      <div className={styles.page_guide}>
+                        <span className={styles.txt_star}>★</span>
+                      </div>
+                    )}
+                    {data.title}
+                  </h3>
                   <div className={styles.icon_img_wrap}>
                     <h4>사용 기술</h4>
                     <div className={styles.toolbox}>
@@ -105,35 +115,12 @@ export default function HomeWebPp(scroll: scroll) {
                     </div>
                   </div>
                   {data.url && data.url !== "" && (
-                    <a
-                      href={data.url}
-                      target="_blank"
-                      // onClick={(e) => {
-                      //   e.preventDefault();
-                      //   handleClick(data.id);
-                      // }}
-                    >
+                    <a href={data.url} target="_blank">
                       자세히 보기
                     </a>
                   )}
                 </article>
               </div>
-              {/* 
-              <div
-                className={styles.fream_wrap}
-                style={
-                  activeId == data.id
-                    ? {
-                        width: "100%",
-                        height: "70vh",
-                        opacity: 1,
-                        transition: "all ease-in 0.3s",
-                      }
-                    : {}
-                }
-              >
-                <iframe src={data.url}></iframe>
-              </div> */}
             </li>
           );
         })}

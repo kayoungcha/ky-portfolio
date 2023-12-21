@@ -12,6 +12,7 @@ import { useEffect, useRef, useState } from "react";
 import { useReadDb } from "../../../hooks/useFirebaseDb";
 import { DocumentData } from "firebase/firestore";
 import { isIOS, isSafari } from "react-device-detect";
+import Link from "next/link";
 
 //DB 인터페이스
 export interface publishingDb {
@@ -30,6 +31,7 @@ export interface publishingDb {
   devPeriod?: string;
   devInfo?: string;
   docId: string;
+  platform?: string;
 }
 
 export interface scroll {
@@ -117,9 +119,11 @@ export default function HomeSlider(scroll: scroll) {
                 >
                   <Image
                     src={data.titleImg}
+                    blurDataURL={data.titleImg}
                     alt={data.title}
                     width={200}
                     height={433}
+                    placeholder="blur"
                     className={styles.slide_img}
                   />
                 </div>
@@ -130,7 +134,21 @@ export default function HomeSlider(scroll: scroll) {
                   ].join(" ")}
                 >
                   <h4 className={styles.back_title}>{data.title}</h4>
-                  <p>{data.content}</p>
+                  <p>
+                    {data.content}
+                    {data.param && (
+                      <span>
+                        <Link
+                          href={{
+                            pathname: "morepub",
+                            query: { id: data.param },
+                          }}
+                        >
+                          화면 더보기
+                        </Link>{" "}
+                      </span>
+                    )}
+                  </p>
                   <h4 className={styles.tool_title}>사용 기술</h4>
                   <p className={styles.tool_area}>
                     {data.useTool.map((tool: string, index: number) => {

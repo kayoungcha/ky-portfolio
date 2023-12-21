@@ -89,6 +89,8 @@ export default function HoneAppPp(scroll: scroll) {
                 alt={data.title}
                 width={300}
                 height={650}
+                placeholder="blur"
+                blurDataURL={data.titleImg}
                 style={data.title == "MISSIONGO" ? { background: "#fff" } : {}}
               />
               <article

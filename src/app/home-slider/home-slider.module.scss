@@ -42,8 +42,7 @@
 }
 
 .on_card_filp {
-  .slide_img:hover,
-  .card_back:hover {
+  .slide_img:hover {
     cursor: url(../../../public/images/click-cursor.png) 50 50, pointer;
   }
   .card_front,
@@ -123,6 +122,17 @@
     line-height: 2.5rem;
     text-align: center;
     word-break: keep-all;
+    span {
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 4px;
+      a {
+        width: auto;
+        color: #0f001cc7;
+        border-bottom: 2px solid rgb(36 5 64 / 14%);
+        cursor: url(../../../public/images/click-cursor.png) 50 50, pointer;
+      }
+    }
   }
 
   .tool_title {
